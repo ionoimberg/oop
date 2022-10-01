@@ -18,15 +18,9 @@ class Users
     {
         global $database;
         $the_result_array = self::find_this_query("SELECT * FROM users WHERE id=$user_id LIMIT 1");
+
         return !empty($the_result_array) ? array_shift($the_result_array) : false;
 
-//        if(!empty($the_result_array)) {
-//
-//            $first_item = array_shift($the_result_array);
-//            return $first_item;
-//        } else {
-//            return false;
-//        }
     }
 
     public static function find_this_query($sql)
@@ -40,17 +34,26 @@ class Users
         return $the_object_array;
     }
 
+    public static function verify_user($username, $password) {
+        global $database;
+
+        $username = $database->escape_string($username);
+        $password = $database->escape_string($password);
+
+        $sql = "SELECT * FROM users WHERE ";
+        $sql .= "username = '{$username}' ";
+        $sql .= "AND password = '{$password}' ";
+        $sql .= "LIMIT 1";
+        $the_result_array = self::find_this_query($sql);
+
+        return !empty($the_result_array) ? array_shift($the_result_array) : false;
+
+    }
+
+
     public static function instantiation($the_record) {
 
         $the_object = new self;
-//        //more oop ex
-//        $the_object->id = $user_found['id'];
-//        $the_object->username = $user_found['username'];
-//        $the_object->password = $user_found['password'];
-//        $the_object->first_name = $user_found['first_name'];
-//        $the_object->last_name = $user_found['last_name'];
-//
-//        return $the_object;
 
         foreach ($the_record as $the_attribute => $value) {
             if($the_object->has_the_attribute($the_attribute)) {
