@@ -10,32 +10,47 @@
 
             <?php
 
-//            $user = new User;
-//            $user->username   = "Gandalf";
-//            $user->password   = "456";
-//            $user->first_name = "James";
-//            $user->last_name  = "Simson";
+            $user = new User;
+            $user->username   = "celentano";
+            $user->password   = "777";
+            $user->first_name = "Adriano";
+            $user->last_name  = "celen's";
 
-//            if(User::verify_user($user->username, $user->password)) {
-//
-//                echo "User already exists.";
-//
-//            } else {
-//
-//                $user->create();
-//                echo "
-//                The name of the user is " . $user->username;
-//
-//            }
+            if(User::verify_user($user->username, $user->password)) {
 
-//            $user = User::find_user_by_id(2);
+                echo "User already exists.";
+
+            } else {
+
+                $user->create();
+                echo "
+                The name of the user is " . $user->username;
+
+            }
+
+//            $user = User::find_user_by_id(11);
+//            $user->username = "Serena";
+//            $user->password = "555";
 //            $user->first_name = "Serena";
+//            $user->last_name = "sim";
+//
 //            $user->update();
 
 //            $user = new User();
 
-            $user = User::find_user_by_id(8);
-            $user->delete();
+//            $user = User::find_user_by_id(6);
+//            $user->delete();
+
+//            $user = User::find_user_by_id(10);
+//            $user->password = "333";
+//            $user->save();
+
+//            $user = new User();
+//            $user->username = "Pinokio";
+//            $user->password = "111";
+//            $user->first_name = "Pino";
+//            $user->last_name = "kio";
+//            $user->save();
 
 
             ?>
