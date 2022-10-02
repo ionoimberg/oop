@@ -10,6 +10,34 @@
 
             <?php
 
+//            $user = new User;
+//            $user->username   = "Gandalf";
+//            $user->password   = "456";
+//            $user->first_name = "James";
+//            $user->last_name  = "Simson";
+
+//            if(User::verify_user($user->username, $user->password)) {
+//
+//                echo "User already exists.";
+//
+//            } else {
+//
+//                $user->create();
+//                echo "
+//                The name of the user is " . $user->username;
+//
+//            }
+
+//            $user = User::find_user_by_id(2);
+//            $user->first_name = "Serena";
+//            $user->update();
+
+//            $user = new User();
+
+            $user = User::find_user_by_id(8);
+            $user->delete();
+
+
             ?>
 
 

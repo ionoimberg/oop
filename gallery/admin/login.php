@@ -17,7 +17,7 @@
 
     //    Method to check database user
 
-            $user_found = Users::verify_user($username, $password);
+            $user_found = User::verify_user($username, $password);
 
             if ($user_found) {
 

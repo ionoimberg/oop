@@ -39,15 +39,16 @@ class Database
         }
     }
 
-    public function escape_string($string)
-    {
+    public function escape_string($string)  {
+
         $escaped_string = $this->connection->real_escape_string($string);
         return $escaped_string;
     }
 
-    public function the_insert_id()
-    {
-        $this->connection->insert_id;
+    public function the_insert_id()  {
+
+        return mysqli_insert_id($this->connection);
+
     }
 
 }
