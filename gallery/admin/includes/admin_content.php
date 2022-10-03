@@ -10,25 +10,25 @@
 
             <?php
 
-            $user = new User;
-            $user->username   = "celentano";
-            $user->password   = "777";
-            $user->first_name = "Adriano";
-            $user->last_name  = "celen's";
+//            $photo = new Photo;
+//            $photo->title   = "celentano";
+//            $photo->size   = "10";
+//            $photo->filename = "poza.jpg";
+//            $photo->description  = "celen's photo";
+//
+//            $photo->create();
 
-            if(User::verify_user($user->username, $user->password)) {
+//            echo INCLUDES_PATH .  "<br>";
+//            echo SITE_ROOT .  "<br>";
+//            echo DS;
+//            echo "<br>";
+//            $upload_directory = "images";
+//            $filename = basename("aaa.jpg");
+//
+//            $target_path = SITE_ROOT . DS . "admin" . DS . $upload_directory . DS . $filename .  "<br>";
+//            echo $target_path;
 
-                echo "User already exists.";
-
-            } else {
-
-                $user->create();
-                echo "
-                The name of the user is " . $user->username;
-
-            }
-
-//            $user = User::find_user_by_id(11);
+            //            $user = User::find_user_by_id(11);
 //            $user->username = "Serena";
 //            $user->password = "555";
 //            $user->first_name = "Serena";
@@ -46,11 +46,19 @@
 //            $user->save();
 
 //            $user = new User();
-//            $user->username = "Pinokio";
-//            $user->password = "111";
-//            $user->first_name = "Pino";
-//            $user->last_name = "kio";
+//            $user->username = "Turandot";
+//            $user->password = "888";
+//            $user->first_name = "Turan";
+//            $user->last_name = "dot";
 //            $user->save();
+
+
+//            $photos = Photo::find_all();
+//            foreach ($photos as $photo) {
+//
+//                echo $photo->title . "<br>";
+//
+//            }
 
 
             ?>
@@ -59,7 +67,7 @@
 
             <ol class="breadcrumb">
                 <li>
-                    <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+                    <i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a>
                 </li>
                 <li class="active">
                     <i class="fa fa-file"></i> Blank Page
