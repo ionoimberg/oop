@@ -153,7 +153,7 @@ class Db_object {
         $sql .= " LIMIT 1";
 
         $database->query($sql);
-        return (bool)mysqli_affected_rows($database->connection);
+        return (mysqli_affected_rows($database->connection)) ? true : false;
 
     }
 

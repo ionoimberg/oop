@@ -10,6 +10,13 @@
 
             <?php
 
+//            $user = User::find_by_id(7);
+//
+//            echo $user->username;
+//
+//
+
+
 //            $photo = new Photo;
 //            $photo->title   = "celentano";
 //            $photo->size   = "10";
