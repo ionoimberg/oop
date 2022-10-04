@@ -1,11 +1,11 @@
 <?php include("includes/header.php"); ?>
-<?php if(!$session->is_signed_in()) {redirect("login.php");} ?>
+<?php if (!$session->is_signed_in()) {
+    redirect("login.php");
+} ?>
 
 <?php
 
 $photos = Photo::find_all();
-
-
 
 
 ?>
@@ -20,7 +20,7 @@ $photos = Photo::find_all();
 
         <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 
-        <?php include("includes/side_nav.php")?>
+        <?php include("includes/side_nav.php") ?>
 
 
         <!-- /.navbar-collapse -->
@@ -42,24 +42,25 @@ $photos = Photo::find_all();
 
                         <table class="table table-hover">
                             <thead>
-                                <tr>
-                                    <th>Photo</th>
-                                    <th>Id</th>
-                                    <th>File Name</th>
-                                    <th>Title</th>
-                                    <th>Size</th>
-                                </tr>
+                            <tr>
+                                <th>Photo</th>
+                                <th>Id</th>
+                                <th>File Name</th>
+                                <th>Title</th>
+                                <th>Size</th>
+                            </tr>
                             </thead>
                             <tbody>
 
                             <?php foreach ($photos as $photo) : ?>
 
                                 <tr>
-                                    <td><img src="<?php echo $photo->picture_path(); ?>" alt="">
+                                    <td><img class="admin-photo-thumbnail" src="<?php echo $photo->picture_path(); ?>"
+                                             alt="">
 
                                         <div class="pictures_link">
-                                            <a href="delete_photo.php/?id=<?php echo $photo->id ?>">Delete</a>
-                                            <a href="#">Edit</a>
+                                            <a href="delete_photo.php?id=<?php echo $photo->id ?>">Delete</a>
+                                            <a href="edit_photo.php?id=<?php echo $photo->id ?>">Edit</a>
                                             <a href="#">View</a>
                                         </div>
                                     </td>
@@ -76,19 +77,13 @@ $photos = Photo::find_all();
                     </div>
 
 
-
-
-
-
-
-
                 </div>
             </div>
             <!-- /.row -->
             <div class="row">
                 <ol class="breadcrumb">
                     <li>
-                        <i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a>
+                        <i class="fa fa-dashboard"></i> <a href="index.php">Dashboard</a>
                     </li>
                     <li class="active">
                         <i class="fa fa-file"></i> Blank Page
