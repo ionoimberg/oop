@@ -72,7 +72,7 @@ if (empty($_GET['id'])) {
                             </div>
 
                             <div class="form-group">
-                                <a class="thumbnail admin-photo-thumbnail" href="#"><img
+                                <a class="thumbnail" href="#"><img
                                             src="<?php echo $photo->picture_path(); ?>" alt=""></a>
 
                             </div>
@@ -106,8 +106,8 @@ if (empty($_GET['id'])) {
                                 <div class="inside">
                                     <div class="box-inner">
                                         <p class="text">
-                                            <span class="glyphicon glyphicon-calendar"></span> Uploaded on: April 22,
-                                            2030 @ 5:26
+                                            <span class="glyphicon glyphicon-calendar"></span> Uploaded on:
+                                            <?php echo date("F d Y h:i A"); ?>
                                         </p>
                                         <p class="text ">
                                             Photo ID: <span class="data photo_id_box"><?php echo $photo->id; ?></span>
