@@ -29,9 +29,6 @@ class Photo extends Db_object {
 
     );
 
-    // this is passing $_FILES['uploaded_file'] as an argument
-    // $file = $_FILES['uploaded_file']
-    // $file['name'] = $_FILES['name']; name is the original value from $_FILES
 
     public function set_file($file) {
 

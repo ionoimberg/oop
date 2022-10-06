@@ -56,7 +56,7 @@ if (empty($_GET['id'])) {
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        EDIT PHOTOS
+                        EDIT PHOTO
                         <small>Subheading</small>
                     </h1>
 
@@ -72,7 +72,7 @@ if (empty($_GET['id'])) {
                             </div>
 
                             <div class="form-group">
-                                <a class="thumbnail" href="#"><img
+                                <a class="thumbnail admin-photo-thumbnail" href="#"><img
                                             src="<?php echo $photo->picture_path(); ?>" alt=""></a>
 
                             </div>
@@ -110,16 +110,16 @@ if (empty($_GET['id'])) {
                                             2030 @ 5:26
                                         </p>
                                         <p class="text ">
-                                            Photo Id: <span class="data photo_id_box">34</span>
+                                            Photo ID: <span class="data photo_id_box"><?php echo $photo->id; ?></span>
                                         </p>
                                         <p class="text">
-                                            Filename: <span class="data">image.jpg</span>
+                                            Filename: <span class="data"><?php echo $photo->filename; ?></span>
                                         </p>
                                         <p class="text">
-                                            File Type: <span class="data">JPG</span>
+                                            File Type: <span class="data"><?php echo $photo->type; ?></span>
                                         </p>
                                         <p class="text">
-                                            File Size: <span class="data">3245345</span>
+                                            File Size: <span class="data"><?php echo $photo->size; ?></span>
                                         </p>
                                     </div>
                                     <div class="info-box-footer clearfix">
