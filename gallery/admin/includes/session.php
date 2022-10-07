@@ -5,11 +5,27 @@
 
         private  $signed_in = false;
         public $user_id;
+        public $count;
 
-        public function __construct()
-        {
+        public function __construct() {
+
             session_start();
+            $this->visitor_count();
             $this->check_the_login();
+
+        }
+
+        public function visitor_count() {
+
+            if(isset($_SESSION['count'])) {
+
+                return $this->count = $_SESSION['count']++;
+
+            } else {
+
+                return $_SESSION['count'] = 1;
+
+            }
 
         }
 
@@ -30,8 +46,8 @@
         }
 
 
-        public function is_signed_in()
-        {
+        public function is_signed_in() {
+
             return $this->signed_in;
         }
 
@@ -51,6 +67,7 @@
             unset($_SESSION['id']);
             unset($this->user_id);
             $this->signed_in = false;
+
         }
     }
 
