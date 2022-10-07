@@ -33,7 +33,7 @@ $photos = Photo::find_all();
                 <div class="col-lg-12">
                     <h1 class="page-header">
                         PHOTOS
-                        <small>Subheading</small>
+                        <small></small>
                     </h1>
 
                     <div class="col-md-12">
@@ -65,8 +65,6 @@ $photos = Photo::find_all();
 
                                         </div>
 
-
-
                                     </td>
                                     <td><?php echo $photo->id; ?></td>
                                     <td><?php echo $photo->filename; ?></td>
@@ -77,11 +75,7 @@ $photos = Photo::find_all();
                                         <a href="comment_photo.php?id=<?php echo $photo->id; ?>">
                                         <?php $comments = Comment::find_the_comments($photo->id);
                                               echo count($comments); ?>
-
                                         </a>
-
-
-
 
                                     </td>
                                 </tr>
@@ -96,16 +90,6 @@ $photos = Photo::find_all();
                 </div>
             </div>
             <!-- /.row -->
-            <div class="row">
-                <ol class="breadcrumb">
-                    <li>
-                        <i class="fa fa-dashboard"></i> <a href="index.php">Dashboard</a>
-                    </li>
-                    <li class="active">
-                        <i class="fa fa-file"></i> Blank Page
-                    </li>
-                </ol>
-            </div>
 
         </div>
         <!-- /.container-fluid -->

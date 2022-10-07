@@ -50,7 +50,7 @@ if(isset($_POST['submit'])) {
                 <div class="col-lg-12">
                     <h1 class="page-header">
                         UPLOAD
-                        <small>Subheading</small>
+                        <small></small>
                     </h1>
 
                     <div class="col-md-6">
@@ -73,18 +73,6 @@ if(isset($_POST['submit'])) {
                 </div>
             </div>
             <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-3">
-                    <ol class="breadcrumb">
-                        <li>
-                            <i class="fa fa-dashboard"></i> <a href="index.php">Dashboard</a>
-                        </li>
-                        <li class="active">
-                            <i class="fa fa-file"></i> Blank Page
-                        </li>
-                    </ol>
-                </div>
-            </div>
 
         </div>
         <!-- /.container-fluid -->

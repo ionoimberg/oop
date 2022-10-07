@@ -33,7 +33,6 @@ $comments = Comment::find_all();
                 <div class="col-lg-12">
                     <h1 class="page-header">
                         Comments
-                        <a href="add_user.php" class="btn btn-primary pull-right">Add Comment</a>
                     </h1>
 
                     <div class="col-md-12">
