@@ -2,9 +2,8 @@
 <?php if (!$session->is_signed_in()) { redirect("login.php");} ?>
 
 <?php
-$saved_user = "";
-$user = new User;
 
+$user = new User;
 
 if (isset($_POST['create'])) {
 
@@ -18,8 +17,8 @@ if (isset($_POST['create'])) {
         $user->set_file($_FILES['user_image']);
         $user->upload_photo();
         $user->save();
-
-        $saved_user = "User " . $user->username . " saved successfully";
+        $session->message("The user {$user->username} has been created!");
+        redirect("users.php");
 
     }
 
@@ -55,10 +54,6 @@ if (isset($_POST['create'])) {
                         Add User
                         <small>Subheading</small>
                     </h1>
-
-                    <div class="alert-info text-center">
-                        <?php echo $saved_user; ?>
-                    </div>
 
                     <form action="" method="post" enctype="multipart/form-data">
 

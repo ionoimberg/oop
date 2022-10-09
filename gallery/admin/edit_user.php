@@ -1,4 +1,6 @@
 <?php include("includes/header.php"); ?>
+<?php include "includes/photo_library_modal.php"; ?>
+
 <?php if (!$session->is_signed_in()) { redirect("login.php");} ?>
 
 <?php
@@ -21,16 +23,20 @@ if (isset($_POST['update'])) {
         $user->last_name = $_POST['last_name'];
         $user->password = $_POST['password'];
 
-        if(empty($_FILES['user_image'])) {
+        if (empty($_FILES['user_image'])) {
 
             $user->save();
+            $session->message("The user {$user->username} has been updated!");
+            redirect("users.php");
+
 
         } else {
 
-        $user->set_file($_FILES['user_image']);
-        $user->upload_photo();
-        $user->save();
-        redirect("edit_user.php?id={$user->id}");
+            $user->set_file($_FILES['user_image']);
+            $user->upload_photo();
+            $user->save();
+            $session->message("The user {$user->username} has been updated!");
+            redirect("users.php");
 
         }
 
@@ -40,7 +46,6 @@ if (isset($_POST['update'])) {
 
 
 ?>
-
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -69,8 +74,10 @@ if (isset($_POST['update'])) {
                         <small>Subheading</small>
                     </h1>
 
-                    <div class="col-md-6">
-                        <img class="img-responsive" src="<?php echo $user->image_path_and_placeholder(); ?>" alt="">
+                    <div class="col-md-6 user_image_box">
+                        <a href="#" data-toggle="modal" data-target="#photo-library">
+                            <img class="img-responsive image-height"
+                                 src="<?php echo $user->image_path_and_placeholder(); ?>" alt=""></a>
                     </div>
 
 
@@ -108,7 +115,7 @@ if (isset($_POST['update'])) {
 
                             <div class="info-box-footer clearfix">
                                 <div class="info-box-delete pull-left">
-                                    <a href="delete_user.php?id=<?php echo $user->id ?>"
+                                    <a id="user-id" href="delete_user.php?id=<?php echo $user->id ?>"
                                        class="btn btn-danger">Delete</a>
                                 </div>
 
@@ -125,16 +132,6 @@ if (isset($_POST['update'])) {
                 </div>
             </div>
             <!-- /.row -->
-            <div class="row">
-                <ol class="breadcrumb">
-                    <li>
-                        <i class="fa fa-dashboard"></i> <a href="index.php">Dashboard</a>
-                    </li>
-                    <li class="active">
-                        <i class="fa fa-file"></i> Blank Page
-                    </li>
-                </ol>
-            </div>
 
         </div>
         <!-- /.container-fluid -->

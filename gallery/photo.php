@@ -20,6 +20,7 @@ if(isset($_POST['submit'])) {
 
     if($new_comment && $new_comment->save()) {
 
+        $session->message("Your message has been submited!");
         redirect("photo.php?id={$photo->id}");
 
     } else {
@@ -68,7 +69,10 @@ $comments = Comment::find_the_comments($photo->id);
                 <p class="lead"><?php echo $photo->caption; ?></p>
                 <p><?php echo $photo->description; ?></p>
 
+                <p class="bg-success"><?php echo $message; ?></p>
+
                 <hr>
+
 
                 <!-- Blog Comments -->
 

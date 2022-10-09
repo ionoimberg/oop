@@ -1,4 +1,4 @@
-<?php //ob_start(); ?>
+<?php ob_start(); ?>
 <?php require_once("init.php"); ?>
 
 
@@ -32,6 +32,8 @@
     <![endif]-->
 
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+
+    <link href="css/dropzone.css" rel="stylesheet">
 
     <link href="css/styles.css" rel="stylesheet">
 

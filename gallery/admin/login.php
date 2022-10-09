@@ -43,7 +43,7 @@
 <div class="col-md-4 col-md-offset-2">
     <h4 class="bg-danger"><?php echo $the_message; ?></h4>
 
-    <form action="" method="post">
+    <form id="login-id" action="" method="post">
 
         <div class="form-group">
             <label for="username">Username</label>
